@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mohamed Abdinoor Ahmed | Portfolio</title>
+
+<meta name="description" content="Professional Portfolio of Mohamed Abdinoor Ahmed">
+<meta name="keywords" content="Water Engineer, GIS Specialist, WASH Specialist, Web Developer, Somalia">
+
+<!-- GOOGLE FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- FONT AWESOME -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+/* ===========================
+GLOBAL STYLES
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    text-decoration:none;
+    list-style:none;
+    scroll-behavior:smooth;
+}
+
+:root{
+    --bg-color:#07121f;
+    --second-bg:#0b1d32;
+    --main-color:#00d9ff;
+    --text-color:#ffffff;
+    --card-color:#112240;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:var(--bg-color);
+    color:var(--text-color);
+    overflow-x:hidden;
+}
+
+/* CUSTOM SCROLLBAR */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#000;
+}
+
+::-webkit-scrollbar-thumb{
+    background:var(--main-color);
+    border-radius:10px;
+}
+
+/* LOADER */
+
+#loader{
+    position:fixed;
+    width:100%;
+    height:100vh;
+    background:#000;
+    z-index:99999;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.spinner{
+    width:70px;
+    height:70px;
+    border:6px solid #fff;
+    border-top:6px solid var(--main-color);
+    border-radius:50%;
+    animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+    100%{
+        transform:rotate(360deg);
+    }
+}
+
+/* SCROLL BAR */
+
+#progress-bar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:0%;
+    height:5px;
+    background:var(--main-color);
+    z-index:9999;
+}
+
+/* HEADER */
+
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    padding:20px 10%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(0,0,0,0.4);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:700;
+    color:#fff;
+}
+
+.logo span{
+    color:var(--main-color);
+}
+
+nav a{
+    margin-left:25px;
+    color:#fff;
+    font-size:16px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:var(--main-color);
+}
+
+/* HOME SECTION */
+
+.home{
+    min-height:100vh;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:120px 10%;
+    gap:50px;
+    position:relative;
+}
+
+.home-content h3{
+    font-size:25px;
+}
+
+.home-content h1{
+    font-size:65px;
+    line-height:1.2;
+}
+
+.home-content h2{
+    color:var(--main-color);
+    margin:15px 0;
+    min-height:40px;
+}
+
+.home-content p{
+    margin:20px 0;
+    line-height:1.8;
+    max-width:700px;
+}
+
+.buttons{
+    margin-top:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 35px;
+    background:var(--main-color);
+    color:#000;
+    border-radius:40px;
+    margin-right:20px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 20px var(--main-color);
+}
+
+.btn-outline{
+    background:transparent;
+    border:2px solid var(--main-color);
+    color:#fff;
+}
+
+/* SOCIAL ICONS */
+
+.social-icons{
+    margin-top:35px;
+}
+
+.social-icons a{
+    width:50px;
+    height:50px;
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    border:2px solid var(--main-color);
+    border-radius:50%;
+    color:#fff;
+    margin-right:15px;
+    font-size:20px;
+    transition:.3s;
+}
+
+.social-icons a:hover{
+    background:var(--main-color);
+    color:#000;
+    transform:translateY(-5px);
+}
+
+/* IMAGE */
+
+.home-image img{
+    width:420px;
+    border-radius:50%;
+    border:6px solid var(--main-color);
+    box-shadow:0 0 40px var(--main-color);
+    animation:floatImage 4s ease-in-out infinite;
+}
+
+@keyframes floatImage{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-20px);
+    }
+}
+
+/* SECTIONS */
+
+section{
+    padding:100px 10%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:70px;
+}
+
+.section-title h2{
+    font-size:45px;
+    color:var(--main-color);
+}
+
+/* ABOUT */
+
+.about-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:50px;
+    align-items:center;
+}
+
+.about-image img{
+    width:100%;
+    border-radius:20px;
+}
+
+.about-content p{
+    line-height:1.9;
+    margin-bottom:20px;
+}
+
+/* SERVICES */
+
+.services-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.service-box{
+    background:var(--card-color);
+    padding:40px 30px;
+    border-radius:20px;
+    transition:.4s;
+    text-align:center;
+}
+
+.service-box:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 30px rgba(0,217,255,0.3);
+}
+
+.service-box i{
+    font-size:55px;
+    color:var(--main-color);
+    margin-bottom:20px;
+}
+
+.service-box h3{
+    margin-bottom:15px;
+}
+
+/* SKILLS */
+
+.skill{
+    margin-bottom:30px;
+}
+
+.skill h3{
+    margin-bottom:10px;
+}
+
+.progress{
+    width:100%;
+    background:#222;
+    height:12px;
+    border-radius:30px;
+}
+
+.progress span{
+    display:block;
+    height:100%;
+    background:var(--main-color);
+    border-radius:30px;
+}
+
+/* PROJECTS */
+
+.projects-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+}
+
+.project-box{
+    background:var(--card-color);
+    border-radius:20px;
+    overflow:hidden;
+    transition:.4s;
+}
+
+.project-box:hover{
+    transform:translateY(-10px);
+}
+
+.project-box img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.project-content{
+    padding:25px;
+}
+
+/* TIMELINE */
+
+.timeline-item{
+    background:var(--card-color);
+    padding:30px;
+    border-left:5px solid var(--main-color);
+    margin-bottom:30px;
+    border-radius:10px;
+}
+
+/* TESTIMONIALS */
+
+.testimonial{
+    background:var(--card-color);
+    padding:40px;
+    border-radius:20px;
+    text-align:center;
+}
+
+/* BLOG */
+
+.blog-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.blog-card{
+    background:var(--card-color);
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.blog-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.blog-content{
+    padding:25px;
+}
+
+/* CONTACT */
+
+.contact form{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.contact input,
+.contact textarea{
+    padding:18px;
+    border:none;
+    border-radius:12px;
+    background:#1c2c44;
+    color:#fff;
+    font-size:16px;
+}
+
+.contact textarea{
+    resize:none;
+}
+
+/* FOOTER */
+
+footer{
+    background:#000;
+    text-align:center;
+    padding:35px;
+    margin-top:60px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:991px){
+
+    nav{
+        display:none;
+    }
+
+    .home{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .home-content h1{
+        font-size:45px;
+    }
+
+    .home-image img{
+        width:300px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- LOADER -->
+
+<div id="loader">
+    <div class="spinner"></div>
+</div>
+
+<!-- SCROLL PROGRESS -->
+
+<div id="progress-bar"></div>
+
+<!-- HEADER -->
+
+<header>
+
+    <a href="#" class="logo">Mohamed<span>.</span></a>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+</header>
+
+<!-- HOME -->
+
+<section class="home" id="home">
+
+    <div class="home-content">
+
+        <h3>Hello, I'm</h3>
+
+        <h1>Mohamed Abdinoor Ahmed</h1>
+
+        <h2><span class="typing"></span></h2>
+
+        <p>
+            Engineering Sustainable Water Solutions,
+            Smart Technologies & Digital Innovation.
+        </p>
+
+        <div class="buttons">
+            <a href="#projects" class="btn">View Portfolio</a>
+            <a href="#contact" class="btn btn-outline">Hire Me</a>
+        </div>
+
+        <div class="social-icons">
+
+          <a href="https://www.linkedin.com/in/mohamed-abdinoor-ahmed-9b3494297?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">
+            <i class="fab fa-linkedin"></i>
+        </a>
+
+            <a href="#"><i class="fab fa-github"></i></a>
+
+            <a href="https://www.facebook.com/share/1A6gAziwN7/" target="_blank" title="Follow me on Facebook">
+              <i class="fab fa-facebook"></i>
+          </a>
+
+            <a href="https://wa.me/254727753714" target="_blank" title="Contact me on WhatsApp">
+              <i class="fab fa-whatsapp"></i>
+          </a>
+          <a href="https://www.tiktok.com/@maanka049?_r=1&_t=ZS-96KDUwoOh9R" target="_blank" title="Follow me on TikTok">
+            <i class="fab fa-tiktok"></i>
+        </a>
+        <a href="https://www.snapchat.com/add/maanka1abdinoor?share_id=yGQYA4R06Is&locale=en-GB" target="_blank" title="Add me on Snapchat">
+          <i class="fab fa-snapchat"></i>
+      </a>
+      <a href="https://x.com/MaankaAbdinoor" target="_blank">
+        <i class="fab fa-x-twitter"></i>
+    </a>
+
+        </div>
+
+    </div>
+
+    <div class="home-image">
+        <img src="SAWIR/SAWIR.jpeg" alt="Profile">
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <div class="section-title">
+        <h2>About Me</h2>
+    </div>
+
+    <div class="about-container">
+
+        <div class="about-image">
+            <img src="SAWIR/SAWIR 2.jpeg" alt="">
+        </div>
+
+        <div class="about-content">
+
+            <p>
+                I am a multidisciplinary professional specializing in Water Engineering,
+                Hydrology, GIS Mapping, WASH Programs, AutoCAD Design,
+                Web Development, Mobile Applications, Networking,
+                and Financial Market Analysis.
+            </p>
+
+            <p>
+                Passionate about innovation, sustainability,
+                humanitarian development, and smart technology solutions.
+            </p>
+
+            <a href="#" class="btn">Download CV</a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section id="services">
+
+    <div class="section-title">
+        <h2>Services</h2>
+    </div>
+
+    <div class="services-container">
+
+        <div class="service-box">
+            <i class="fa-solid fa-water"></i>
+            <h3>Water Engineering</h3>
+            <p>Advanced water systems and sustainable engineering solutions.</p>
+        </div>
+
+        <div class="service-box">
+            <i class="fa-solid fa-map-location-dot"></i>
+            <h3>GIS Mapping</h3>
+            <p>Professional GIS spatial analysis and mapping services.</p>
+        </div>
+
+        <div class="service-box">
+            <i class="fa-solid fa-code"></i>
+            <h3>Web Development</h3>
+            <p>Modern responsive professional websites and platforms.</p>
+        </div>
+
+        <div class="service-box">
+            <i class="fa-solid fa-mobile-screen-button"></i>
+            <h3>Mobile Apps</h3>
+            <p>Interactive mobile applications and systems.</p>
+        </div>
+
+        <div class="service-box">
+            <i class="fa-solid fa-network-wired"></i>
+            <h3>Networking</h3>
+            <p>Network administration and IT infrastructure management.</p>
+        </div>
+
+        <div class="service-box">
+            <i class="fa-solid fa-chart-line"></i>
+            <h3>Financial Analysis</h3>
+            <p>Financial market analysis and investment research.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+    <div class="section-title">
+        <h2>Skills</h2>
+    </div>
+
+    <div class="skill">
+        <h3>HTML</h3>
+        <div class="progress"><span style="width:95%"></span></div>
+    </div>
+
+    <div class="skill">
+        <h3>CSS</h3>
+        <div class="progress"><span style="width:90%"></span></div>
+    </div>
+
+    <div class="skill">
+        <h3>JavaScript</h3>
+        <div class="progress"><span style="width:85%"></span></div>
+    </div>
+
+    <div class="skill">
+        <h3>GIS</h3>
+        <div class="progress"><span style="width:88%"></span></div>
+    </div>
+
+    <div class="skill">
+        <h3>Hydrology</h3>
+        <div class="progress"><span style="width:92%"></span></div>
+    </div>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+    <div class="section-title">
+        <h2>Projects</h2>
+    </div>
+
+    <div class="projects-container">
+
+        <div class="project-box">
+
+            <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1200&auto=format&fit=crop" alt="">
+
+            <div class="project-content">
+
+                <h3>Water Engineering Project</h3>
+
+                <p>Professional water infrastructure and sustainable engineering systems.</p>
+
+                <br>
+
+                <a href="#" class="btn">Live Demo</a>
+
+            </div>
+
+        </div>
+
+        <div class="project-box">
+
+            <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=1200&auto=format&fit=crop" alt="">
+
+            <div class="project-content">
+
+                <h3>GIS Mapping System</h3>
+
+                <p>Advanced GIS mapping and spatial analysis dashboard.</p>
+
+                <br>
+
+                <a href="#" class="btn">Live Demo</a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- EXPERIENCE -->
+
+<section id="experience">
+
+    <div class="section-title">
+        <h2>Experience</h2>
+    </div>
+
+    <div class="timeline-item">
+
+        <h3>WASH Specialist</h3>
+
+        <span>2024 - Present</span>
+
+        <p>
+            Community hygiene promotion, WASH coordination,
+            technical reporting and humanitarian programs.
+        </p>
+
+    </div>
+
+    <div class="timeline-item">
+
+        <h3>GIS & Hydrology Specialist</h3>
+
+        <span>2023 - 2024</span>
+
+        <p>
+            GIS mapping, hydrological analysis,
+            AutoCAD design and water resource management.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- TESTIMONIAL -->
+
+<section>
+
+    <div class="section-title">
+        <h2>Testimonials</h2>
+    </div>
+
+    <div class="testimonial">
+
+        <p>
+            "Mohamed is highly professional, technically skilled,
+            and delivers high-quality engineering and technology solutions."
+        </p>
+
+        <br>
+
+        <h3>- Professional Client</h3>
+
+    </div>
+
+</section>
+
+<!-- BLOG -->
+
+<section>
+
+    <div class="section-title">
+        <h2>Blog</h2>
+    </div>
+
+    <div class="blog-container">
+
+        <div class="blog-card">
+
+            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop" alt="">
+
+            <div class="blog-content">
+
+                <h3>Future of Water Engineering</h3>
+
+                <p>
+                    Exploring sustainable water technologies
+                    and smart engineering systems.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+    <div class="section-title">
+        <h2>Contact Me</h2>
+    </div>
+
+    <form id="contactForm">
+
+        <input type="text" placeholder="Your Name" required>
+
+        <input type="email" placeholder="Your Email" required>
+
+        <textarea rows="6" placeholder="Your Message"></textarea>
+
+        <button type="submit" class="btn">
+            Send Message
+        </button>
+
+    </form>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        © 2026 Mohamed Abdinoor Ahmed | All Rights Reserved
+    </p>
+
+</footer>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+/* LOADER */
+
+window.addEventListener("load", () => {
+
+    document.getElementById("loader").style.display = "none";
+
+});
+
+/* TYPING EFFECT */
+
+const texts = [
+    "Water Engineer",
+    "Hydrology Specialist",
+    "WASH Specialist",
+    "GIS Expert",
+    "Web Developer",
+    "Financial Analyst"
+];
+
+let count = 0;
+let index = 0;
+let currentText = "";
+let letter = "";
+
+(function type(){
+
+    if(count === texts.length){
+        count = 0;
+    }
+
+    currentText = texts[count];
+
+    letter = currentText.slice(0, ++index);
+
+    document.querySelector(".typing").textContent = letter;
+
+    if(letter.length === currentText.length){
+
+        count++;
+        index = 0;
+
+    }
+
+    setTimeout(type, 150);
+
+})();
+
+/* SCROLL BAR */
+
+window.onscroll = function(){
+
+    let winScroll =
+        document.body.scrollTop ||
+        document.documentElement.scrollTop;
+
+    let height =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+
+    let scrolled = (winScroll / height) * 100;
+
+    document.getElementById("progress-bar").style.width =
+        scrolled + "%";
+};
+
+/* CONTACT FORM */
+
+document.getElementById("contactForm")
+.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    // Get form values (make sure your inputs have these IDs)
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let message = document.getElementById("message").value;
+
+    // Your WhatsApp number (change this)
+    let phoneNumber = "252612355165";
+
+    // Create WhatsApp message
+    let whatsappMessage =
+        "Hello, I am " + name + "%0A" +
+        "Email: " + email + "%0A" +
+        "Message: " + message;
+
+    // WhatsApp link
+    let whatsappURL =
+        "https://wa.me/" + phoneNumber + "?text=" + whatsappMessage;
+
+    // Open WhatsApp
+    window.open(whatsappURL, "_blank");
+
+});
+
+</script>
+
+</body>
+</html>
